@@ -15,22 +15,8 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { Icons } from "./icons"
-import { ModeToggle } from "./mode-toggle"
-
-const posts: { title: string; href: string; description: string }[] = [
-  {
-    title: "React",
-    href: "/blog/react",
-    description:
-      "Learn React.js and Next.js in a simple to understand articles.",
-  },
-  {
-    title: "React1",
-    href: "/blog/react1",
-    description:
-      "Learn React.js and Next.js in a simple to understand articles.",
-  },
-]
+import { ModeToggle } from "./ui/mode-toggle"
+import { POSTS } from "./lib/constants"
 
 export function MainNav({className}: {className?: string}) {
   return (
@@ -47,7 +33,7 @@ export function MainNav({className}: {className?: string}) {
             <NavigationMenuTrigger>Posts</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                {posts.map((post) => (
+                {POSTS.map((post) => (
                   <ListItem
                     key={post.title}
                     title={post.title}
