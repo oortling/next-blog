@@ -18,7 +18,7 @@ export default function Home() {
           </div>
           <div className="mt-10 sticky top-0">
             <h1>Popular Posts</h1>
-            {/*  */}
+            <p>place_holder place_holder place_holder</p>
           </div>
         </div>
       </main>
