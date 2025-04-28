@@ -23,4 +23,10 @@ export const POSTS: { title: string; href: string; description: string }[] = [
     description:
       "Learn React.js and Next.js in a simple to understand articles.",
   },
+  {
+    title: "react",
+    href: "/blog/react",
+    description:
+      "Learn React.js and Next.js in a simple to understand articles.",
+  },
 ];

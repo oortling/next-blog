@@ -8,15 +8,15 @@ function getMDXFiles(dir: string) {
 }
 // read data from those files
 function readMDXFile(filaPath: fs.PathOrFileDescriptor): matter.GrayMatterFile<string> {
-  let rawContent = fs.readFileSync(filaPath, 'utf-8');
+  const rawContent = fs.readFileSync(filaPath, 'utf-8');
   return matter(rawContent);
 }
 // present the mdx data and metadata
 function getMDXData(dir: string) {
-  let mdxFiles = getMDXFiles(dir);
+  const mdxFiles = getMDXFiles(dir);
   return mdxFiles.map((file) => {
-    let { data: metadata, content } = readMDXFile(path.join(dir, file));
-    let slug = path.basename(file, path.extname(file));
+    const { data: metadata, content } = readMDXFile(path.join(dir, file));
+    const slug = path.basename(file, path.extname(file));
 
     return {
       metadata,
@@ -30,17 +30,17 @@ export function getBlogPosts() {
   return getMDXData(path.join(process.cwd(), 'src', 'app', 'blog', 'contents'));
 }
 
-export function fromatData(date: string, includeRelative = false) {
-  let currentDate = new Date();
+export function fromatDate(date: string, includeRelative = false) {
+  const currentDate = new Date();
   if (!date.includes("T")) {
     date = `${date}T00:00:00`;
   }
 
-  let targetDate = new Date(date);
+  const targetDate = new Date(date);
 
-  let yearsAgo = currentDate.getFullYear() - targetDate.getFullYear();
-  let monthAgo = currentDate.getMonth() - targetDate.getMonth();
-  let daysAgo = currentDate.getDate() - targetDate.getDate();
+  const yearsAgo = currentDate.getFullYear() - targetDate.getFullYear();
+  const monthAgo = currentDate.getMonth() - targetDate.getMonth();
+  const daysAgo = currentDate.getDate() - targetDate.getDate();
   
   let formattedDate = "";
 
@@ -54,7 +54,7 @@ export function fromatData(date: string, includeRelative = false) {
     formattedDate = "Today";
   }
 
-  let fullDate =  targetDate.toLocaleDateString("en-us", {
+  const fullDate =  targetDate.toLocaleDateString("en-us", {
     month: "long",
     day: "numeric",
     year: "numeric",

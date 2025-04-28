@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider attribute={"class"} defaultTheme="system" enableSystem disableTransitionOnChange>
-          <main>
+          <main className="flex-1">
             {children}
           </main>
           <Footer />
