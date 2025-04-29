@@ -15,12 +15,13 @@ export async function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { slug: string; category: string };
+  params: Promise<{ slug: string; }>;
 }) {
-  const post = getBlogPosts().find((post) => post.slug === params.slug);
+  const { slug } = await params;
+  const post = getBlogPosts().find((post) => post.slug === slug);
   if (!post) {
     return;
   }
