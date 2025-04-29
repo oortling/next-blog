@@ -20,9 +20,9 @@ import { POSTS } from "../lib/constants"
 
 export function MainNav({className}: {className?: string}) {
   return (
-    <div className={cn("flex flex-col items-start justify-start md:flex-row md:items-center md:justify-between pt-10 z-50", className)}>
+    <div className={cn("flex flex-col items-start justify-start md:flex-row md:items-center md:justify-between pt-5 z-50", className)}>
       <a href={"/"}>
-        <div className="flex items-center justify-between w-32">
+        <div className="font-semibold flex items-center justify-between w-32">
           <Icons.logo className="h-6 w-6" />
           <p>Code Flows</p>
         </div>

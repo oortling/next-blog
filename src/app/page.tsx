@@ -14,10 +14,11 @@ export default function Home() {
         </div>
         <div className="h-screen">
           <div>
-            <h1 className="font-bold mb-4">Top Categories</h1>
+            <h1 className="font-bold mb-4">TOP CATEGORIES</h1>
             <TopCategroies></TopCategroies>
           </div>
           <div className="mt-10 sticky top-0">
+            <h1 className="font-bold mb-4">POPULAR POSTS</h1>
             <PopularPosts />
           </div>
         </div>
