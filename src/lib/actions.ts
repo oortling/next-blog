@@ -8,10 +8,10 @@ import z from "zod";
 const FormSchema = z.object({
   id: z.number(),
   email: z.string().min(1, { message: "Email is required" }),
-  isSubcribed: z.boolean(),
+  isSubscribed: z.boolean(),
 });
 
-const CreateSubcriber = FormSchema.omit({ id: true, isSubcribed: true });
+const CreateSubscriber = FormSchema.omit({ id: true, isSubscribed: true });
 
 type State = {
   errors?: {
@@ -20,8 +20,8 @@ type State = {
   message?: string | null;
 };
 
-export async function createSubcriber(prevState: State, formData: FormData) {
-  const validatedField = CreateSubcriber.safeParse({
+export async function createSubscriber(prevState: State, formData: FormData) {
+  const validatedField = CreateSubscriber.safeParse({
     email: formData.get("email"),
   });
 

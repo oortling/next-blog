@@ -5,12 +5,12 @@ import { POSTS } from "../lib/constants";
 import Link from "next/link";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import { createSubcriber } from "@/lib/actions";
+import { createSubscriber } from "@/lib/actions";
 import { useActionState } from "react";
 
 export default function Footer() {
   const initialState = { message: "", errors: {} };
-  const [state, dispatch] = useActionState(createSubcriber, initialState);
+  const [state, dispatch] = useActionState(createSubscriber, initialState);
 
   return (
     <footer className="bg-gray-100 py-8 dark:bg-gray-800 mt-10">
