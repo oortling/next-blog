@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
+import * as React from "react";
+import Link from "next/link";
 
-import { cn } from "@/lib/utils"
-// import { Icons } from "@/components/icons"
+import { cn } from "@/lib/utils";
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,14 +13,19 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import { Icons } from "./icons"
-import { ModeToggle } from "./ui/mode-toggle"
-import { POSTS } from "../lib/constants"
+} from "@/components/ui/navigation-menu";
+import { Icons } from "./icons";
+import { ModeToggle } from "./ui/mode-toggle";
+import { POSTS } from "../lib/constants";
 
-export function MainNav({className}: {className?: string}) {
+export function MainNav({ className }: { className?: string }) {
   return (
-    <div className={cn("flex flex-col items-start justify-start md:flex-row md:items-center md:justify-between pt-5 z-50", className)}>
+    <div
+      className={cn(
+        "flex flex-col items-start justify-start md:flex-row md:items-center md:justify-between pt-5 z-50",
+        className
+      )}
+    >
       <a href={"/"}>
         <div className="font-semibold flex items-center justify-between w-32">
           <Icons.logo className="h-6 w-6" />
@@ -57,13 +62,12 @@ export function MainNav({className}: {className?: string}) {
       </NavigationMenu>
       <div className="flex items-center justify-between w-20">
         <ModeToggle />
-        <Link href={'/rss'}>
+        <Link href={"/rss"}>
           <Icons.rss className="h-6 w-6" />
         </Link>
       </div>
     </div>
-
-  )
+  );
 }
 
 const ListItem = React.forwardRef<
@@ -88,6 +92,6 @@ const ListItem = React.forwardRef<
         </a>
       </NavigationMenuLink>
     </li>
-  )
-})
-ListItem.displayName = "ListItem"
+  );
+});
+ListItem.displayName = "ListItem";

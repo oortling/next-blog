@@ -13,7 +13,7 @@ export default function LatestPosts() {
   const latestPosts = getBlogPosts();
   return (
     <>
-      <h1 className="inline-block font-heading text-4xl tracking-tight lg:text-5xl">Recently Published</h1>
+      <h1 className="inline-block font-heading text-2xl font-bold">最新发布</h1>
       {latestPosts.sort((a, b) => {
         if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
           return -1;
