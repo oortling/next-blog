@@ -1,4 +1,4 @@
-import { Waves, Twitter, Github, Rss, type Icon as LucidIcon } from "lucide-react";
+import { Waves, ArrowRight, Twitter, Github, Rss, type Icon as LucidIcon } from "lucide-react";
 
 export type Icon = typeof LucidIcon;
 
@@ -7,4 +7,5 @@ export const Icons = {
   rss: Rss,
   twitter: Twitter,
   github: Github,
+  arrowRight: ArrowRight,
 };

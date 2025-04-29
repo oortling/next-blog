@@ -1,10 +1,17 @@
+"use client";
+
 import { Icons } from "./icons";
-import { POSTS } from "./lib/constants";
+import { POSTS } from "../lib/constants";
 import Link from "next/link";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
+import { createSubcriber } from "@/lib/actions";
+import { useActionState } from "react";
 
 export default function Footer() {
+  const initialState = { message: "", errors: {} };
+  const [state, dispatch] = useActionState(createSubcriber, initialState);
+
   return (
     <footer className="bg-gray-100 py-8 dark:bg-gray-800 mt-10">
       <div className="container mx-auto my-auto px-4 md:px-6">
@@ -86,21 +93,41 @@ export default function Footer() {
               Subscribe to our newsletter to stay up-to-date with the latest
               news and updates.
             </p>
-            <form>
+            <form action={dispatch}>
               <div className="flex space-x-2">
                 <Input
                   type="email"
+                  name="email"
+                  id="email"
                   placeholder="Enter your email"
                   className="flex-1"
+                  defaultValue=""
+                  aria-describedby="email-error"
                 />
                 <Button>Subscribe</Button>
+              </div>
+              <div
+                id="email-error"
+                aria-label="polite"
+                aria-atomic="true"
+                className="px-1"
+              >
+                {state?.errors?.email &&
+                  state.errors.email.map((error: string) => (
+                    <p key={error} className="text-red-500 text-xs">
+                      {error}
+                    </p>
+                  ))}
+                {!state?.errors?.email && (
+                  <p className="text-xs text-green-500">{state?.message}</p>
+                )}
               </div>
             </form>
           </div>
         </div>
-				<div className="mt-8 border-t border-gray-200 pt-4 text-center text-xs text-gray-500 dark:border-gray-700 dark:text-gray-400">
-					&copy; 2025 Code Flows. All right reserved.
-				</div>
+        <div className="mt-8 border-t border-gray-200 pt-4 text-center text-xs text-gray-500 dark:border-gray-700 dark:text-gray-400">
+          &copy; 2025 Code Flows. All right reserved.
+        </div>
       </div>
     </footer>
   );

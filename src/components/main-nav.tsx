@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import { Icons } from "./icons"
 import { ModeToggle } from "./ui/mode-toggle"
-import { POSTS } from "./lib/constants"
+import { POSTS } from "../lib/constants"
 
 export function MainNav({className}: {className?: string}) {
   return (

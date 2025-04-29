@@ -1,6 +1,6 @@
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { POSTS } from "../lib/constants";
+import { POSTS } from "../../lib/constants";
 
 export default function TopCatogories() {
   return (
