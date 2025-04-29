@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Container from "@/components/Container";
 import { BreadcrumbWithCustomSeparator } from "@/components/Breadcrumb";
 import CustomMDX from "@/components/mdx";
+import ReportViews from "@/components/ReportViews";
 
 export async function generateStaticParams() {
   const posts = getBlogPosts();
@@ -18,34 +19,39 @@ export default async function Page({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params
-  const posts = getBlogPosts().find((post) => post.slug === slug);
+  const { slug } = await params;
+  const post = getBlogPosts().find((post) => post.slug === slug);
 
-  if (!posts) {
+  if (!post) {
     notFound();
   }
 
   return (
     <>
+      <ReportViews
+        category={post.metadata.category}
+        title={post.metadata.title}
+        slug={post.slug}
+      />
       <Header>
         <Container>
           <BreadcrumbWithCustomSeparator
-            category={posts.metadata.category}
-            slug={posts.slug}
+            category={post.metadata.category}
+            slug={post.slug}
           />
           <h1 className="title font-semibold text-2xl tracking-tighter mt-4">
-            {posts.metadata.title}
+            {post.metadata.title}
           </h1>
           <div className="flex justify-between items-center mt-2 mb-4 text-sm">
             <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-2">
-              {fromatDate(posts.metadata.publishedAt)}
+              {fromatDate(post.metadata.publishedAt)}
             </p>
           </div>
         </Container>
       </Header>
       <Container>
         <article className="prose">
-          <CustomMDX source={posts.content} />
+          <CustomMDX source={post.content} />
         </article>
       </Container>
     </>
