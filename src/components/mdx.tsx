@@ -2,16 +2,11 @@ import { MDXRemote } from "next-mdx-remote-client/rsc";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import remarkGfm from 'remark-gfm'
+import remarkGfm from "remark-gfm";
 import { highlight } from "sugar-high";
 
 function Blockquote(props: any) {
-  return (
-    <blockquote
-      className="p-4 blockquote"
-      {...props}
-    />
-  );
+  return <blockquote className="p-4 blockquote" {...props} />;
 }
 
 function Code({ children, ...props }: any) {
@@ -72,29 +67,6 @@ function createHeading(level: number) {
   return Heading;
 }
 
-function Table({ data }: any) {
-  const headers = data.headers.map((header: any, index: any) => (
-    <th key={index}>{header}</th>
-  ));
-
-  return (
-    <table>
-      <thead>
-        <tr>{headers}</tr>
-      </thead>
-      <tbody>
-        {data.rows.map((row: any, rowIndex: any) => (
-          <tr key={rowIndex}>
-            {row.map((cell: any, cellIndex: any) => (
-              <td key={cellIndex}>{cell}</td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-}
-
 const components = {
   h1: createHeading(1),
   h2: createHeading(2),
@@ -106,7 +78,6 @@ const components = {
   a: CustomLink,
   code: Code,
   blockquote: Blockquote,
-  // table: Table,
 };
 
 export default function CustomMDX(props: any) {
@@ -116,9 +87,7 @@ export default function CustomMDX(props: any) {
       components={{ ...components, ...(props.components || {}) }}
       options={{
         mdxOptions: {
-          remarkPlugins: [
-            remarkGfm,
-          ],
+          remarkPlugins: [remarkGfm],
           rehypePlugins: [
             // Add any additional rehype plugins here
           ],

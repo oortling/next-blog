@@ -27,6 +27,7 @@ export async function POST(request: Request) {
       await db.blog.update({
         where: { slug: slug },
         data: {
+          title: title,
           view_count: {increment: 1},
         },
       });

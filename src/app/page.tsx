@@ -14,7 +14,7 @@ export default function Home() {
         <div>
           <LatestPosts />
         </div>
-        <div className="h-screen">
+        <div className="h-screen max-w-1/2">
           <div className="mb-4">
             <ProfileCard />
           </div>

@@ -63,7 +63,7 @@ export function MainNav({ className }: { className?: string }) {
       <div className="flex items-center justify-between w-20">
         <ModeToggle />
         <Link href={"/rss"}>
-          <Icons.rss className="h-6 w-6" />
+          <Icons.rss className="h-5 w-5" />
         </Link>
       </div>
     </div>
