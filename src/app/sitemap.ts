@@ -1,7 +1,7 @@
 import { POSTS } from "@/lib/constants";
 import { getBlogPosts } from "./blog/utils";
 
-export const baseUrl = "https://next-blog-sand-delta.vercel.app";
+export const baseUrl = "https://www.codeflows.cn";
 
 export default async function sitemap() {
   const blogs = getBlogPosts().map((post) => ({
