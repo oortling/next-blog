@@ -126,7 +126,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-gray-200 pt-4 text-center text-xs text-gray-500 dark:border-gray-700 dark:text-gray-400">
-          &copy; 2025 Code Flows. All right reserved.
+          &copy; 2025 Code Flows. All right reserved. <a href="http://beian.miit.gov.cn/" rel="noopener" target="_blank">皖ICP备2025075131号</a>
         </div>
       </div>
     </footer>

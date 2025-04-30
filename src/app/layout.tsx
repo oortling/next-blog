@@ -27,7 +27,8 @@ export const metadata: Metadata = {
     "Software Development",
     "Web Development",
     "Fullstack Development",
-    "Home Storage",
+    "HomeLab ",
+    "AIGC",
   ],
   authors: [
     {

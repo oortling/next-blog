@@ -1,4 +1,4 @@
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { MDXRemote } from "next-mdx-remote-client/rsc";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -55,7 +55,7 @@ function createHeading(level: number) {
 
     return React.createElement(
       `h${level}`,
-      { id: slug },
+      { id: slug, className: "text-blue-400 font-bold" },
       [
         React.createElement("a", {
           href: `#${slug}`,
@@ -71,21 +71,25 @@ function createHeading(level: number) {
   return Heading;
 }
 
-function Table({data}:any) {
-  const headers = data.headers.map((header: any, index:any) => (
+function Table({ data }: any) {
+  const headers = data.headers.map((header: any, index: any) => (
     <th key={index}>{header}</th>
   ));
-  
-  const rows = data.rows.map((cell:any, cellIndex:any) => (
-    <td key={cellIndex}>{cell}</td>
-  ))
-  
+
   return (
     <table>
       <thead>
         <tr>{headers}</tr>
       </thead>
-      <tbody>{rows}</tbody>
+      <tbody>
+        {data.rows.map((row: any, rowIndex: any) => (
+          <tr key={rowIndex}>
+            {row.map((cell: any, cellIndex: any) => (
+              <td key={cellIndex}>{cell}</td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
     </table>
   );
 }
@@ -101,7 +105,7 @@ const components = {
   a: CustomLink,
   code: Code,
   blockquote: Blockquote,
-  Table,
+  table: Table,
 };
 
 export default function CustomMDX(props: any) {

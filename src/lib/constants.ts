@@ -1,38 +1,22 @@
 export const POSTS: { title: string; href: string; description: string }[] = [
   {
-    title: "家庭存储",
+    title: "NAS",
     href: "/blog/homelab",
-    description:
-      "Learn React.js and Next.js in a simple to understand articles.",
+    description: "探索家庭服务器的无限可能：从硬件搭建到软件优化，打造智能数字生活中心",
   },
   {
-    title: "Rust",
+    title: "RUST",
     href: "/blog/rsut",
-    description:
-      "Learn React.js and Next.js in a simple to understand articles.",
+    description: "深入系统级编程世界：从内存安全到并发模型，解锁高性能开发实战经验", 
   },
   {
-    title: "前端框架",
+    title: "FRONTEND",
     href: "/blog/fronted",
-    description:
-      "Learn React.js and Next.js in a simple to understand articles.",
+    description: "构建现代Web体验：从框架生态到视觉设计，探索界面艺术与工程实践",
   },
   {
-    title: "AI",
+    title: "AIGC",
     href: "/blog/ai",
-    description:
-      "Learn React.js and Next.js in a simple to understand articles.",
-  },
-  {
-    title: "react",
-    href: "/blog/react",
-    description:
-      "Learn React.js and Next.js in a simple to understand articles.",
-  },
-  {
-    title: "todo",
-    href: "/blog/todo",
-    description:
-      "Learn React.js and Next.js in a simple to understand articles.",
+    description: "驾驭生成式AI浪潮：从基础原理到创意实践，解码智能创作的未来蓝图",
   },
 ];

@@ -19,8 +19,11 @@ export default function ProfileCard() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <p>欢迎来访！</p>
-          <p>我是一名形而上学软件开发者</p>
+          <p className="text-violet-800">欢迎来访 👏</p>
+          <p className="text-violet-900">
+            我是一名形而上学软件开发者，热爱开源软件和开源社区。
+            <br />
+          </p>
         </CardContent>
         <CardFooter>
           <div className="space-x-2 flex flex-wrap">

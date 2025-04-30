@@ -10,10 +10,10 @@ export default function Page() {
       <Container>
         <div className="prose mx-auto">
           <h1>About</h1>
-          <p>Fronted Frame: Next.js</p>
-          <p>ORM: Prisma</p>
-          <p>UI/Compinent: TailwindCSS ShadcnUI</p>
-          <p>CI/CD: Vercel</p>
+          <p> <strong>Frame:</strong> Next.js</p>
+          <p> <strong>Stroage:</strong> Prisma Postgres</p>
+          <p> <strong>UI/Components:</strong> TailwindCSSShadcnUI</p>
+          <p> <strong>CI/CD:</strong> Vercel</p>
         </div>
       </Container>
     </>
