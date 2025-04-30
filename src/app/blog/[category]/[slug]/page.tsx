@@ -82,7 +82,7 @@ export default async function Page({
             category={post.metadata.category}
             slug={post.slug}
           />
-          <h1 className="title font-semibold text-2xl tracking-tighter mt-4">
+          <h1 className="title font-semibold text-2xl mt-4">
             {post.metadata.title}
           </h1>
           <div className="flex justify-between items-center mt-2 mb-4 text-sm">

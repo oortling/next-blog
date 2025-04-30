@@ -2,12 +2,13 @@ import { MDXRemote } from "next-mdx-remote-client/rsc";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import remarkGfm from 'remark-gfm'
 import { highlight } from "sugar-high";
 
 function Blockquote(props: any) {
   return (
     <blockquote
-      className="bg-blue-200 dark:bg-blue-950 dark:bg-opacity-30 bg-opacity-30 p-4 rounded-md blockquote"
+      className="p-4 blockquote"
       {...props}
     />
   );
@@ -105,7 +106,7 @@ const components = {
   a: CustomLink,
   code: Code,
   blockquote: Blockquote,
-  table: Table,
+  // table: Table,
 };
 
 export default function CustomMDX(props: any) {
@@ -113,6 +114,16 @@ export default function CustomMDX(props: any) {
     <MDXRemote
       {...props}
       components={{ ...components, ...(props.components || {}) }}
+      options={{
+        mdxOptions: {
+          remarkPlugins: [
+            remarkGfm,
+          ],
+          rehypePlugins: [
+            // Add any additional rehype plugins here
+          ],
+        },
+      }}
     />
   );
 }

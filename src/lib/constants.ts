@@ -11,7 +11,7 @@ export const POSTS: { title: string; href: string; description: string }[] = [
   },
   {
     title: "FRONTEND",
-    href: "/blog/fronted",
+    href: "/blog/frontend",
     description: "构建现代Web体验：从框架生态到视觉设计，探索界面艺术与工程实践",
   },
   {
