@@ -5,8 +5,8 @@ export const POSTS: { title: string; href: string; description: string }[] = [
     description: "探索家庭服务器的无限可能：从硬件搭建到软件优化，打造智能数字生活中心",
   },
   {
-    title: "Rust",
-    href: "/blog/rsut",
+    title: "RUST",
+    href: "/blog/rust",
     description: "深入系统级编程世界：从内存安全到并发模型，解锁高性能开发实战经验", 
   },
   {

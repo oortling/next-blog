@@ -52,11 +52,12 @@ export function MainNav({ className }: { className?: string }) {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link href="/about" passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                About
-              </NavigationMenuLink>
-            </Link>
+            <NavigationMenuLink
+              asChild
+              className={navigationMenuTriggerStyle()}
+            >
+              <Link href="/about">About</Link>
+            </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
